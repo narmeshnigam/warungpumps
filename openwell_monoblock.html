@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Openwell & Monoblock Pumps – Warung Surface Motors</title>
+  <meta name="description" content="Choose from Warung’s range of openwell and monoblock water pumps — perfect for tanks, gardens, and household water supply. Easy to install and energy efficient.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A3D62;
+      --orange: #F76C1C;
+      --bg: #F9F9F9;
+      --highlight: #E8F0FE;
+      --text: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; color: var(--blue); }
+    .container { max-width: 1200px; margin: auto; padding: 48px 24px; }
+    .hero { background: url('assets/banners/openwell.jpg') no-repeat center center/cover; color: #fff; padding: 120px 24px 80px; }
+    .hero h1 { font-size: 38px; max-width: 520px; }
+    .hero p { font-size: 17px; margin-top: 12px; max-width: 500px; }
+
+    .intro { text-align: center; background: #fff; padding: 48px 24px; }
+    .intro p { max-width: 640px; margin: auto; font-size: 16px; color: #555; }
+
+    .filters { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 24px; }
+    .filters select { padding: 8px 16px; border: 1px solid #ccc; border-radius: 6px; }
+
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .product-card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); text-align: center; }
+    .product-card img { width: 100%; max-height: 180px; object-fit: contain; }
+    .product-card h3 { margin: 16px 0 8px; font-size: 18px; color: var(--blue); }
+    .product-card ul { list-style: none; padding: 0; font-size: 14px; color: #555; }
+    .product-card a { margin-top: 12px; display: inline-block; background: var(--orange); color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+
+    .usecase-strip { display: flex; overflow-x: auto; gap: 16px; padding: 24px 0; margin: 40px 0; scroll-snap-type: x mandatory; }
+    .usecase-card { flex: 0 0 240px; scroll-snap-align: center; background: #fff; padding: 16px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+    .usecase-card img { width: 100%; height: 140px; object-fit: cover; border-radius: 6px; }
+    .usecase-card p { margin-top: 10px; font-size: 14px; font-weight: 600; }
+
+    .support-strip { background: var(--highlight); display: flex; flex-wrap: wrap; justify-content: space-around; gap: 16px; padding: 32px 24px; text-align: center; }
+    .support-box { flex: 1 1 240px; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+    .support-box h4 { color: var(--blue); margin-bottom: 10px; }
+    .support-box a { color: var(--orange); font-weight: bold; text-decoration: underline; }
+
+    .sticky-whatsapp { position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<!-- Paste header.html content here -->
+
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Easy Water Transfer from Tanks & Open Wells</h1>
+  <p>Explore our openwell and monoblock motor range — compact, powerful, and affordable.</p>
+</section>
+
+<!-- Intro Text -->
+<section class="intro">
+  <p>Warung openwell and monoblock pumps are compact, surface-installed motors ideal for transferring water from tanks, ponds, or shallow sources. They require minimal installation and offer dependable performance for daily water needs.</p>
+</section>
+
+<!-- Filters + Products -->
+<div class="container">
+  <div class="filters">
+    <select><option>HP</option></select>
+    <select><option>Head</option></select>
+    <select><option>Use Case</option></select>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="assets/products/mono1.png" alt="Monoblock Pump for Tank">
+      <h3>WMB 1HP Monoblock</h3>
+      <ul>
+        <li>Use: Tank Transfer</li>
+        <li>Discharge: 1800 LPH</li>
+        <li>Head: 25m</li>
+      </ul>
+      <a href="product-detail.html">View Details</a>
+    </div>
+    <div class="product-card">
+      <img src="assets/products/openwell1.png" alt="Openwell Pump for Irrigation">
+      <h3>WOW 2HP Openwell</h3>
+      <ul>
+        <li>Use: Small Farm</li>
+        <li>Discharge: 4500 LPH</li>
+        <li>Head: 18m</li>
+      </ul>
+      <a href="product-detail.html">View Details</a>
+    </div>
+  </div>
+</div>
+
+<!-- Use Case Cards -->
+<section class="container">
+  <div class="usecase-strip">
+    <div class="usecase-card">
+      <img src="assets/usecases/tank-transfer.jpg" alt="Tank Transfer">
+      <p>Household Tank Transfer</p>
+    </div>
+    <div class="usecase-card">
+      <img src="assets/usecases/garden.jpg" alt="Garden Watering">
+      <p>Garden Watering</p>
+    </div>
+    <div class="usecase-card">
+      <img src="assets/usecases/irrigation.jpg" alt="Openwell Irrigation">
+      <p>Openwell Irrigation</p>
+    </div>
+    <div class="usecase-card">
+      <img src="assets/usecases/livestock.jpg" alt="Livestock Supply">
+      <p>Livestock Shed Supply</p>
+    </div>
+  </div>
+</section>
+
+<!-- Support Strip -->
+<section class="support-strip">
+  <div class="support-box">
+    <h4>Need Help Choosing?</h4>
+    <a href="selector.html">Start Here →</a>
+  </div>
+  <div class="support-box">
+    <h4>Ask via WhatsApp</h4>
+    <a href="https://wa.me/919999999999">Chat Now →</a>
+  </div>
+  <div class="support-box">
+    <h4>Download Brochure</h4>
+    <a href="assets/brochures/openwell-monoblock.pdf" target="_blank">PDF →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<!-- Paste footer.html content here -->
+
+<!-- WhatsApp CTA -->
+<a href="https://wa.me/919999999999?text=I%27m+interested+in+Warung+Openwell+or+Monoblock+pumps" class="sticky-whatsapp">💬 Ask about Surface Pumps</a>
+
+</body>
+</html>

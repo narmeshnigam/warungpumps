@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Submersible, Tubewell & Openwell Pumps | Warung Pumps</title>
+  <meta name="description" content="Explore a full range of pumps at Warung — including submersible, tubewell, and openwell models. Filter by usage, HP, and specs. Trusted by farmers & professionals.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A3D62;
+      --orange: #F76C1C;
+      --highlight: #E8F0FE;
+      --text: #4A4A4A;
+      --bg: #F9F9F9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.5; }
+    h1, h2 { font-family: 'Poppins', sans-serif; color: var(--blue); }
+    h1 { font-size: 42px; font-weight: 700; }
+    h2 { font-size: 32px; font-weight: 600; margin-bottom: 12px; }
+    .container { max-width: 1280px; margin: auto; padding: 48px 24px; }
+    .btn { background: var(--orange); color: #fff; padding: 12px 24px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s ease; }
+    .btn:hover { filter: brightness(110%); transform: scale(1.05); }
+    .hero { background: url('assets/images/products-hero.jpg') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; color: #fff; }
+    .filter-bar { background: #fff; position: sticky; top: 0; z-index: 10; padding: 16px 24px; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+    .filter-bar select { padding: 8px 12px; border: 1px solid #ccc; border-radius: 8px; font-family: 'Open Sans', sans-serif; }
+    .product-grid { display: grid; gap: 24px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); margin-top: 48px; }
+    .card { background: white; border-radius: 14px; padding: 16px; box-shadow: 0 4px 16px rgba(10, 61, 98, 0.1); transition: 0.3s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(10, 61, 98, 0.15); }
+    .card img { width: 100%; border-radius: 10px; margin-bottom: 12px; }
+    .card h3 { font-size: 20px; margin-bottom: 4px; color: var(--blue); }
+    .card p { margin-bottom: 4px; }
+    .inquiry-strip { background: var(--highlight); display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; padding: 32px 24px; border-radius: 14px; margin-top: 64px; }
+    .inquiry-strip h2 { margin: 0; }
+    .text-center { text-align: center; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <!-- Paste header.html content here -->
+
+  <!-- Section 1: Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Explore Our Pump Range</h1>
+      <p style="font-size: 18px; margin: 12px 0;">Reliable models for agriculture, household, and commercial water solutions.</p>
+      <a href="selector-tool.html" class="btn">Use Pump Selector Tool</a>
+    </div>
+  </section>
+
+  <!-- Section 2: Filter & Sort -->
+  <div class="filter-bar">
+    <select><option>All Pump Types</option><option>Tubewell</option><option>Submersible</option><option>Openwell</option></select>
+    <select><option>Phase</option><option>Single</option><option>Three</option></select>
+    <select><option>HP Range</option><option>0.5–1 HP</option><option>1.5–3 HP</option><option>3–5 HP</option><option>5+ HP</option></select>
+    <select><option>Usage</option><option>Agricultural</option><option>Domestic</option><option>Commercial</option></select>
+    <select><option>Sort By</option><option>Popularity</option><option>HP High → Low</option><option>HP Low → High</option></select>
+  </div>
+
+  <!-- Section 3: Product Grid -->
+  <div class="container">
+    <div class="product-grid">
+      <div class="card">
+        <img src="assets/images/pump1.jpg" alt="WRG-1HP-SUB">
+        <h3>WRG-1HP-SUB</h3>
+        <p>Ideal for 150ft deep borewell</p>
+        <ul>
+          <li>Power: 1 HP</li>
+          <li>Phase: Single</li>
+          <li>Flow: 130 LPM</li>
+          <li>Max Depth: 200 ft</li>
+        </ul>
+        <a href="products/wrg-1hp-sub.html" class="btn" style="margin-top: 12px;">View Details</a>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/pump2.jpg" alt="WRG-2HP-TUBE">
+        <h3>WRG-2HP-TUBE</h3>
+        <p>Heavy-duty tubewell pump</p>
+        <ul>
+          <li>Power: 2 HP</li>
+          <li>Phase: Three</li>
+          <li>Flow: 160 LPM</li>
+          <li>Max Depth: 250 ft</li>
+        </ul>
+        <a href="products/wrg-2hp-tube.html" class="btn" style="margin-top: 12px;">View Details</a>
+      </div>
+
+      <div class="card">
+        <img src="assets/images/pump3.jpg" alt="WRG-0.75HP-OPEN">
+        <h3>WRG-0.75HP-OPEN</h3>
+        <p>Best for shallow water lifting</p>
+        <ul>
+          <li>Power: 0.75 HP</li>
+          <li>Phase: Single</li>
+          <li>Flow: 100 LPM</li>
+          <li>Lift Height: 30 ft</li>
+        </ul>
+        <a href="products/wrg-0.75hp-open.html" class="btn" style="margin-top: 12px;">View Details</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Quick Inquiry Strip -->
+  <div class="container">
+    <div class="inquiry-strip">
+      <h2>Need Help Choosing the Right Model?</h2>
+      <a href="https://wa.me/919999999999?text=Hi%2C+I+need+help+choosing+a+pump" class="btn">Chat with Our Expert →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- Paste footer.html content here -->
+
+  <!-- Sticky WhatsApp CTA -->
+  <a href="https://wa.me/919999999999?text=Hi%2C+I%27m+looking+for+a+pump+recommendation" target="_blank" style="position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999;">💬 Need Help Choosing?</a>
+
+</body>
+</html>

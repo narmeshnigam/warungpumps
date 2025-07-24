@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Become a Dealer – Partner with Warung Pumps</title>
+  <meta name="description" content="Join the Warung Pumps dealership network. Get high-quality products, good margins, marketing support, and service assistance. Apply now.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A3D62;
+      --orange: #F76C1C;
+      --highlight: #E8F0FE;
+      --text: #4A4A4A;
+      --bg: #F9F9F9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--blue); }
+    h1 { font-size: 36px; margin-bottom: 12px; }
+    h2 { font-size: 28px; margin-bottom: 12px; }
+    .container { max-width: 1280px; margin: auto; padding: 48px 24px; }
+    .btn { background: var(--orange); color: #fff; padding: 12px 24px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s ease; }
+    .btn:hover { filter: brightness(110%); transform: scale(1.05); }
+    .hero { background: url('assets/images/dealer-banner.jpg') center/cover no-repeat; height: 50vh; display: flex; align-items: center; justify-content: center; position: relative; text-align: center; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; color: #fff; }
+    .icon-grid, .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 32px; }
+    .icon-box, .card { background: #fff; padding: 24px; border-radius: 14px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+    .card p { font-size: 14px; margin-top: 8px; }
+    .map-box { text-align: center; margin: 48px 0; }
+    .map-box img { width: 100%; max-width: 640px; border-radius: 12px; }
+    .testimonials { display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px; }
+    .testimonial { flex: 1; background: var(--highlight); padding: 24px; border-radius: 10px; font-style: italic; font-size: 15px; }
+    .form-section { background: #fff; padding: 48px 24px; border-radius: 16px; margin-top: 64px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    form { display: grid; gap: 16px; }
+    input, textarea, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--blue); font-family: 'Open Sans', sans-serif; }
+    .sticky-apply { position: fixed; bottom: 16px; right: 16px; background: var(--orange); color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <!-- Paste header.html content here -->
+
+  <!-- Section 1: Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Partner with Warung Pumps</h1>
+      <p>Start or grow your business with India’s trusted pump brand.</p>
+      <a href="#apply" class="btn" style="margin-top: 16px;">Apply for Dealership →</a>
+    </div>
+  </section>
+
+  <!-- Section 2: Why Become a Dealer -->
+  <div class="container">
+    <h2>Why Become a Dealer?</h2>
+    <div class="icon-grid">
+      <div class="icon-box">🛒<h3>Fast-Selling Inventory</h3><p>Proven demand across regions</p></div>
+      <div class="icon-box">💰<h3>Attractive Margins</h3><p>Profit-friendly pricing structures</p></div>
+      <div class="icon-box">🤝<h3>Ongoing Support</h3><p>Training, marketing & stock updates</p></div>
+      <div class="icon-box">📦<h3>Reliable Logistics</h3><p>On-time delivery & fulfillment</p></div>
+    </div>
+  </div>
+
+  <!-- Section 3: Who Can Apply -->
+  <div class="container">
+    <h2>Who Can Apply?</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Retailers</h3>
+        <p>Already selling electrical/mechanical equipment? Expand into pumps.</p>
+      </div>
+      <div class="card">
+        <h3>Entrepreneurs</h3>
+        <p>Looking to start a business in a high-demand sector? Let’s talk.</p>
+      </div>
+      <div class="card">
+        <h3>Technicians / Installers</h3>
+        <p>Interested in representation in your service area? Get in touch.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4: Map + Testimonials -->
+  <div class="container">
+    <h2>Our Growing Network</h2>
+    <div class="map-box">
+      <img src="assets/images/india-dealer-map.jpg" alt="Dealer Coverage Map">
+    </div>
+    <div class="testimonials">
+      <div class="testimonial">“Warung gives us great margins and better repeat value.”<br><br>— Rajesh Electricals, UP</div>
+      <div class="testimonial">“Stock always arrives on time. Customers know the brand by name.”<br><br>— Desai Traders, MP</div>
+    </div>
+  </div>
+
+  <!-- Section 5: Form -->
+  <div class="container" id="apply">
+    <div class="form-section">
+      <h2>Apply for Dealership</h2>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="tel" name="mobile" placeholder="Mobile Number" required>
+        <input type="text" name="location" placeholder="Location / City" required>
+        <select name="type">
+          <option>Type of Applicant</option>
+          <option>Retailer</option>
+          <option>Service Agent</option>
+          <option>Distributor</option>
+          <option>Other</option>
+        </select>
+        <input type="text" name="experience" placeholder="Years in Business (Optional)">
+        <textarea name="query" rows="4" placeholder="Message / Query"></textarea>
+        <button type="submit" class="btn">Apply for Dealership</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- Paste footer.html content here -->
+
+  <!-- Sticky CTA Button -->
+  <a href="#apply" class="sticky-apply">Apply Now</a>
+
+</body>
+</html>

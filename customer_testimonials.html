@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Testimonials | Real Reviews – Warung Pumps</title>
+  <meta name="description" content="Read real customer reviews of Warung Pumps. Hear what farmers, homeowners, and dealers say about our submersible, openwell, and tubewell motors.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A3D62;
+      --orange: #F76C1C;
+      --highlight: #E8F0FE;
+      --text: #333;
+      --bg: #F9F9F9;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--blue); }
+    .container { max-width: 1200px; margin: auto; padding: 48px 24px; }
+    .hero { padding: 80px 20px 40px; text-align: center; background: #fff; }
+    .hero h1 { font-size: 36px; }
+    .hero p { font-size: 16px; color: #666; margin-top: 8px; }
+
+    .slider { display: flex; overflow-x: auto; gap: 16px; scroll-snap-type: x mandatory; padding: 32px 0; }
+    .testimonial-card { background: #fff; padding: 24px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); flex: 0 0 300px; scroll-snap-align: start; }
+    .testimonial-card img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+    .testimonial-card blockquote { font-style: italic; margin: 12px 0; color: var(--text); }
+    .testimonial-card .name { font-weight: bold; margin-top: 8px; }
+    .testimonial-card .location { font-size: 13px; color: #666; }
+
+    .video-section { margin-top: 64px; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .video-grid iframe { width: 100%; height: 180px; border-radius: 12px; border: none; }
+
+    .cta-banner { background: var(--highlight); padding: 32px 20px; text-align: center; border-radius: 14px; margin-top: 64px; }
+    .btn { background: var(--orange); color: #fff; padding: 12px 24px; border-radius: 10px; font-family: 'Montserrat', sans-serif; text-decoration: none; font-weight: bold; }
+    .sticky-whatsapp { position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <!-- Paste header.html content here -->
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>What Our Customers Say</h1>
+    <p>Real stories from farms, homes, and businesses across India.</p>
+  </section>
+
+  <!-- Testimonial Slider -->
+  <div class="container">
+    <div class="slider">
+      <div class="testimonial-card">
+        <img src="assets/images/user1.jpg" alt="Ramesh Yadav">
+        <blockquote>“Running strong for 3+ years — no complaints!”</blockquote>
+        <div class="name">Ramesh Yadav</div>
+        <div class="location">Barabanki (3HP Submersible)</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="assets/images/user2.jpg" alt="Nita Verma">
+        <blockquote>“Installed in our home garden. Peaceful and powerful.”</blockquote>
+        <div class="name">Nita Verma</div>
+        <div class="location">Gorakhpur (1HP Openwell)</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="assets/images/user3.jpg" alt="Zahid Khan">
+        <blockquote>“Even after voltage issues, it works flawlessly.”</blockquote>
+        <div class="name">Zahid Khan</div>
+        <div class="location">Agra (1.5HP Tubewell)</div>
+      </div>
+      <div class="testimonial-card">
+        <img src="assets/images/user4.jpg" alt="Jai Prakash">
+        <blockquote>“We recommend Warung to all our clients. Hassle-free.”</blockquote>
+        <div class="name">Jai Prakash</div>
+        <div class="location">Dealer, Etawah</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Videos -->
+  <div class="container video-section">
+    <h2 style="text-align: center; margin-bottom: 24px;">Watch Customer Experiences</h2>
+    <div class="video-grid">
+      <iframe src="https://www.youtube.com/embed/VID1" title="Customer Testimonial 1" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VID2" title="Customer Testimonial 2" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VID3" title="Customer Testimonial 3" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VID4" title="Dealer Feedback" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <!-- CTA Strip -->
+  <div class="container">
+    <div class="cta-banner">
+      <p>Have you had a great experience with Warung Pumps? We’d love to hear from you.</p>
+      <a href="contact.html" class="btn">Submit Your Feedback →</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- Paste footer.html content here -->
+
+  <!-- Sticky WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hi%2C+I+want+to+share+my+feedback+on+Warung+Pumps" class="sticky-whatsapp">💬 Share Your Review</a>
+
+</body>
+</html>

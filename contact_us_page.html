@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Warung Pumps | Store Location, Enquiry & Support</title>
+  <meta name="description" content="Get in touch with Warung Pumps for product recommendations, store directions, service help, and dealership queries. Call, WhatsApp, or use the enquiry form.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #0A3D62;
+      --orange: #F76C1C;
+      --highlight: #E8F0FE;
+      --text: #4A4A4A;
+      --bg: #F9F9F9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Open Sans', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--blue); }
+    h1 { font-size: 36px; margin-bottom: 12px; }
+    h2 { font-size: 28px; margin-bottom: 12px; }
+    .container { max-width: 1280px; margin: auto; padding: 48px 24px; }
+    .btn { background: var(--orange); color: #fff; padding: 12px 24px; border-radius: 10px; font-family: 'Montserrat', sans-serif; font-weight: 600; text-decoration: none; display: inline-block; transition: 0.3s ease; }
+    .btn:hover { filter: brightness(110%); transform: scale(1.05); }
+    .hero { background: url('assets/images/contact-hero.jpg') center/cover no-repeat; height: 50vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+    .hero::after { content: ''; position: absolute; inset: 0; background: rgba(0,0,0,0.5); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; color: #fff; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 32px; }
+    .info-box { background: #fff; padding: 24px; border-radius: 14px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .info-box p { margin-top: 8px; font-size: 14px; }
+    .info-box a { color: var(--blue); text-decoration: none; font-weight: 600; }
+    iframe { width: 100%; height: 400px; border: none; border-radius: 14px; margin-top: 24px; }
+    form { display: grid; gap: 16px; max-width: 640px; margin: auto; margin-top: 48px; background: #fff; padding: 32px; border-radius: 14px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+    input, select, textarea { padding: 12px; border: 1px solid var(--blue); border-radius: 8px; font-family: 'Open Sans'; }
+    .faq-section { margin-top: 64px; max-width: 800px; margin-left: auto; margin-right: auto; }
+    .faq { background: #fff; padding: 16px 24px; margin-bottom: 16px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .faq h3 { margin-bottom: 6px; font-size: 16px; }
+    .faq p { font-size: 14px; }
+    .sticky-whatsapp { position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <!-- Paste header.html content here -->
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>We’re Here to Help You</h1>
+      <p>Reach out for product advice, store location, or service help.</p>
+    </div>
+  </section>
+
+  <!-- Contact Info Grid -->
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-box">📍<h3>Address</h3><p>Warung Pumps, Near Shiv Temple, NH-91, Industrial Area, Agra Road, Etawah, UP</p></div>
+      <div class="info-box">☎<h3>Phone</h3><p><a href="tel:+919999999999">+91 99999 99999</a></p></div>
+      <div class="info-box">💬<h3>WhatsApp</h3><p><a href="https://wa.me/919999999999?text=Hi%2C+I+need+help+with+pumps">Chat Now</a></p></div>
+      <div class="info-box">✉<h3>Email</h3><p><a href="mailto:info@warungpumps.com">info@warungpumps.com</a></p></div>
+      <div class="info-box">🕒<h3>Timings</h3><p>Mon–Sat, 10:00 AM – 6:30 PM</p></div>
+    </div>
+  </div>
+
+  <!-- Google Map -->
+  <div class="container">
+    <h2 style="text-align: center; margin-top: 48px;">Visit Us at Our Store</h2>
+    <iframe src="https://maps.google.com/maps?q=Etawah%2C%20UP&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="container">
+    <form action="#" method="post">
+      <h2 style="text-align: center;">Submit Your Enquiry</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="tel" name="mobile" placeholder="Mobile Number" required>
+      <input type="text" name="location" placeholder="City / Location" required>
+      <select name="interest">
+        <option value="">Interested In</option>
+        <option>Product Inquiry</option>
+        <option>Service Support</option>
+        <option>Dealer Inquiry</option>
+        <option>General</option>
+      </select>
+      <textarea name="message" rows="4" placeholder="Your Message"></textarea>
+      <button type="submit" class="btn">Submit Enquiry</button>
+    </form>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="container faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq">
+      <h3>What’s the minimum bore depth for your submersible pumps?</h3>
+      <p>We recommend a minimum depth of 100ft for most WRG-SUB series pumps.</p>
+    </div>
+    <div class="faq">
+      <h3>Do you provide installation?</h3>
+      <p>Yes, installation is available in selected regions. Please contact support for availability.</p>
+    </div>
+    <div class="faq">
+      <h3>Where can I get spare parts?</h3>
+      <p>Spare parts are available at authorized service centers and dealers. You can also inquire via WhatsApp.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- Paste footer.html content here -->
+
+  <!-- Sticky WhatsApp -->
+  <a href="https://wa.me/919999999999?text=Hi%2C+I+want+to+connect+with+Warung+Pumps" class="sticky-whatsapp">💬 Chat on WhatsApp</a>
+
+</body>
+</html>
