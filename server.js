@@ -52,6 +52,12 @@ db.serialize(() => {
     message TEXT,
     timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
   )`);
+  db.run(`CREATE TABLE IF NOT EXISTS reset_tokens (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    admin_id INTEGER,
+    token TEXT,
+    expires_at DATETIME
+  )`);
 
   // Insert default admin
   db.get('SELECT COUNT(*) as count FROM admins', (err, row) => {
@@ -83,6 +89,37 @@ app.post('/api/admin/login', (req, res) => {
     }
     const token = jwt.sign({ id: row.id, email: row.email }, SECRET);
     res.json({ success: true, token });
+  });
+});
+
+app.post('/api/admin/forgot-password', (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.json({ success: false, message: 'Email required' });
+  db.get('SELECT id FROM admins WHERE email=?', [email], (err, row) => {
+    if (!row) return res.json({ success: false, message: 'Email not found' });
+    const token = require('crypto').randomBytes(20).toString('hex');
+    const expires = Date.now() + 3600 * 1000;
+    db.run('INSERT INTO reset_tokens(admin_id, token, expires_at) VALUES(?,?,?)', [row.id, token, expires], (err2) => {
+      if (err2) return res.status(500).json({ success: false, message: 'DB error' });
+      res.json({ success: true, message: 'Reset link generated', token });
+    });
+  });
+});
+
+app.post('/api/admin/reset-password', (req, res) => {
+  const { token, newPassword } = req.body;
+  if (!token || !newPassword) return res.json({ success: false, message: 'Invalid request' });
+  db.get('SELECT admin_id, expires_at FROM reset_tokens WHERE token=?', [token], (err, row) => {
+    if (!row || row.expires_at < Date.now()) {
+      return res.json({ success: false, message: 'Token expired or invalid' });
+    }
+    const hash = bcrypt.hashSync(newPassword, 10);
+    db.run('UPDATE admins SET password=? WHERE id=?', [hash, row.admin_id], (err2) => {
+      if (err2) return res.status(500).json({ success: false, message: 'DB error' });
+      db.run('DELETE FROM reset_tokens WHERE token=?', [token]);
+      db.run('INSERT INTO activities(type, message) VALUES(?, ?)', ['password_reset', 'Admin password reset']);
+      res.json({ success: true, message: 'Password reset successful' });
+    });
   });
 });
 
