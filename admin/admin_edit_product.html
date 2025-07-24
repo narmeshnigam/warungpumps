@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Product | Warung Admin</title>
+  <meta name="description" content="Modify existing product data within the Warung Pumps admin dashboard.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Open+Sans:wght@400;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-light: #F9F9F9;
+      --accent-blue: #0A3D62;
+      --accent-orange: #F76C1C;
+      --text-muted: #4A4A4A;
+      --btn-text: #FFFFFF;
+      --card-shadow: rgba(10, 61, 98, 0.15);
+      --font-h: 'Poppins', sans-serif;
+      --font-body: 'Open Sans', sans-serif;
+      --font-btn: 'Montserrat', sans-serif;
+    }
+    body {
+      background: var(--bg-light);
+      font-family: var(--font-body);
+      color: var(--text-muted);
+      padding: 48px 24px;
+    }
+    h2 {
+      font-family: var(--font-h);
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 24px;
+      color: var(--accent-blue);
+      text-decoration: none;
+    }
+    .card {
+      background: #fff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px var(--card-shadow);
+      max-width: 800px;
+      margin: auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--accent-blue);
+      background: #fff;
+      font-family: var(--font-body);
+    }
+    .preview {
+      margin-top: 10px;
+      max-height: 120px;
+    }
+    .btn {
+      background: var(--accent-orange);
+      color: var(--btn-text);
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-family: var(--font-btn);
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+      margin-right: 16px;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      filter: brightness(110%);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--accent-blue);
+      text-decoration: underline;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+    .success {
+      color: green;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a href="/admin/products" class="back-link">← Back to All Products</a>
+  <h2>Edit Product</h2>
+  <div class="card">
+    <form id="productForm">
+      <div class="form-group">
+        <label for="name">Product Name *</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="form-group">
+        <label for="description">Product Description *</label>
+        <textarea id="description" rows="4" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category">Product Category *</label>
+        <select id="category" required></select>
+      </div>
+      <div class="form-group">
+        <label for="warranty">Warranty Duration (months)</label>
+        <input type="number" id="warranty" min="0" />
+      </div>
+      <div class="form-group">
+        <label for="support">Support Type</label>
+        <select id="support">
+          <option>On-site</option>
+          <option>Service Centre</option>
+          <option>Call Support</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="image">Change Image</label>
+        <input type="file" id="image" accept="image/*" />
+        <img id="previewImg" class="preview" style="display:none;" />
+      </div>
+      <button type="submit" class="btn" id="updateBtn">Update Product</button>
+      <a href="/admin/products" class="btn btn-secondary">Cancel</a>
+    </form>
+    <div id="responseMsg"></div>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get('id');
+    const form = document.getElementById('productForm');
+    const previewImg = document.getElementById('previewImg');
+    const msg = document.getElementById('responseMsg');
+
+    async function loadCategories(selectedId) {
+      const select = document.getElementById('category');
+      const res = await fetch('/api/categories');
+      const categories = await res.json();
+      categories.forEach(cat => {
+        const opt = document.createElement('option');
+        opt.value = cat.id;
+        opt.textContent = cat.name;
+        if (cat.id == selectedId) opt.selected = true;
+        select.appendChild(opt);
+      });
+    }
+
+    async function loadProduct() {
+      try {
+        const res = await fetch(`/api/products/${productId}`);
+        const data = await res.json();
+        document.getElementById('name').value = data.name;
+        document.getElementById('description').value = data.description;
+        document.getElementById('warranty').value = data.warranty_months;
+        document.getElementById('support').value = data.support_type;
+        if (data.image_url) {
+          previewImg.src = data.image_url;
+          previewImg.style.display = 'block';
+        }
+        await loadCategories(data.category_id);
+      } catch (err) {
+        msg.textContent = 'Failed to load product data.';
+        msg.className = 'error';
+      }
+    }
+
+    document.getElementById('image').addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          previewImg.src = e.target.result;
+          previewImg.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const description = document.getElementById('description').value.trim();
+      const categoryId = document.getElementById('category').value;
+      const warranty = document.getElementById('warranty').value;
+      const support = document.getElementById('support').value;
+      const imageInput = document.getElementById('image');
+
+      if (!name || !description || !categoryId) {
+        msg.textContent = 'Please fill all required fields.';
+        msg.className = 'error';
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append('name', name);
+      formData.append('description', description);
+      formData.append('category_id', categoryId);
+      formData.append('warranty_months', warranty);
+      formData.append('support_type', support);
+      if (imageInput.files[0]) {
+        formData.append('image', imageInput.files[0]);
+      }
+
+      const btn = document.getElementById('updateBtn');
+      btn.disabled = true;
+      btn.textContent = 'Updating...';
+
+      try {
+        const res = await fetch(`/api/products/${productId}`, {
+          method: 'PUT',
+          body: formData
+        });
+        const result = await res.json();
+        if (result.success) {
+          msg.textContent = 'Product updated successfully!';
+          msg.className = 'success';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          msg.textContent = 'Update failed.';
+          msg.className = 'error';
+        }
+      } catch (err) {
+        msg.textContent = 'Something went wrong. Please try again.';
+        msg.className = 'error';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Update Product';
+      }
+    });
+
+    loadProduct();
+  </script>
+</body>
+</html>
