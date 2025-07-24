@@ -63,46 +63,7 @@
 
   <!-- Section 3: Product Grid -->
   <div class="container">
-    <div class="product-grid">
-      <div class="card">
-        <img src="assets/images/pump1.jpg" alt="WRG-1HP-SUB">
-        <h3>WRG-1HP-SUB</h3>
-        <p>Ideal for 150ft deep borewell</p>
-        <ul>
-          <li>Power: 1 HP</li>
-          <li>Phase: Single</li>
-          <li>Flow: 130 LPM</li>
-          <li>Max Depth: 200 ft</li>
-        </ul>
-        <a href="products/wrg-1hp-sub.html" class="btn" style="margin-top: 12px;">View Details</a>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/pump2.jpg" alt="WRG-2HP-TUBE">
-        <h3>WRG-2HP-TUBE</h3>
-        <p>Heavy-duty tubewell pump</p>
-        <ul>
-          <li>Power: 2 HP</li>
-          <li>Phase: Three</li>
-          <li>Flow: 160 LPM</li>
-          <li>Max Depth: 250 ft</li>
-        </ul>
-        <a href="products/wrg-2hp-tube.html" class="btn" style="margin-top: 12px;">View Details</a>
-      </div>
-
-      <div class="card">
-        <img src="assets/images/pump3.jpg" alt="WRG-0.75HP-OPEN">
-        <h3>WRG-0.75HP-OPEN</h3>
-        <p>Best for shallow water lifting</p>
-        <ul>
-          <li>Power: 0.75 HP</li>
-          <li>Phase: Single</li>
-          <li>Flow: 100 LPM</li>
-          <li>Lift Height: 30 ft</li>
-        </ul>
-        <a href="products/wrg-0.75hp-open.html" class="btn" style="margin-top: 12px;">View Details</a>
-      </div>
-    </div>
+    <div class="product-grid" id="productGrid"></div>
   </div>
 
   <!-- Section 4: Quick Inquiry Strip -->
@@ -119,6 +80,24 @@
   <!-- Sticky WhatsApp CTA -->
   <a href="https://wa.me/919999999999?text=Hi%2C+I%27m+looking+for+a+pump+recommendation" target="_blank" style="position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999;"><span class="emoji">💬</span> Need Help Choosing?</a>
 
-<script src="load-assets.js"></script>
+  <script>
+    async function loadProducts() {
+      const res = await fetch('/api/products');
+      const data = await res.json();
+      const grid = document.getElementById('productGrid');
+      data.products.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <img src="${p.image_url}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <a href="#" class="btn" style="margin-top: 12px;">View Details</a>`;
+        grid.appendChild(card);
+      });
+    }
+    loadProducts();
+  </script>
+  <script src="load-assets.js"></script>
 </body>
 </html>

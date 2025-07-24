@@ -52,9 +52,36 @@ db.serialize(() => {
       db.run('INSERT INTO admins(email, password) VALUES (?, ?)', ['admin@warung.com', hash]);
     }
     const testHash = bcrypt.hashSync('1234567890', 10);
-    db.run('INSERT OR IGNORE INTO admins(email, password) VALUES (?, ?)', ['nigamnarmesh@gmail.com', testHash], () => {
+    db.run('INSERT OR IGNORE INTO admins(email, password) VALUES (?, ?)', ['nigamnarmesh@gmail.com', testHash]);
+  });
+
+  // seed categories
+  db.get('SELECT COUNT(*) as count FROM categories', (err, row) => {
+    if (!row.count) {
+      const stmt = db.prepare('INSERT INTO categories(name) VALUES (?)');
+      ['Submersible Pumps', 'Tubewell Pumps', 'Openwell Pumps'].forEach(n => stmt.run(n));
+      stmt.finalize();
+    }
+  });
+
+  // seed products
+  db.get('SELECT COUNT(*) as count FROM products', (err, row) => {
+    if (!row.count) {
+      db.all('SELECT id, name FROM categories', (e, cats) => {
+        const ids = {};
+        (cats || []).forEach(c => ids[c.name] = c.id);
+        const stmt = db.prepare('INSERT INTO products(name, description, category_id, warranty_months, support_type, image) VALUES (?,?,?,?,?,?)');
+        stmt.run('WRG-1HP-SUB', 'Ideal for 150ft deep borewell', ids['Submersible Pumps'], 12, 'Phone', 'pump1.jpg');
+        stmt.run('WRG-2HP-TUBE', 'Heavy-duty tubewell pump', ids['Tubewell Pumps'], 12, 'Phone', 'pump2.jpg');
+        stmt.run('WRG-0.75HP-OPEN', 'Best for shallow water lifting', ids['Openwell Pumps'], 12, 'Phone', 'pump3.jpg');
+        stmt.finalize(() => {
+          console.log('Database initialized with dummy data');
+          db.close();
+        });
+      });
+    } else {
       console.log('Database initialized');
       db.close();
-    });
+    }
   });
 });

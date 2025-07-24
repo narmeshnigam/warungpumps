@@ -175,6 +175,89 @@ app.post('/api/products/add', authenticate, upload.single('image'), (req, res) =
   );
 });
 
+app.get('/api/products', (req, res) => {
+  const { search = '', category = '', page = 1 } = req.query;
+  const pageSize = 10;
+  const params = [];
+  let base = 'FROM products LEFT JOIN categories ON products.category_id = categories.id';
+  let where = [];
+  if (search) {
+    where.push('products.name LIKE ?');
+    params.push(`%${search}%`);
+  }
+  if (category) {
+    where.push('category_id = ?');
+    params.push(category);
+  }
+  const whereClause = where.length ? 'WHERE ' + where.join(' AND ') : '';
+  db.get(`SELECT COUNT(*) as c ${base} ${whereClause}`, params, (err, countRow) => {
+    const offset = (page - 1) * pageSize;
+    const queryParams = params.slice();
+    queryParams.push(pageSize, offset);
+    db.all(
+      `SELECT products.id, products.name, products.description, products.warranty_months, products.support_type, products.image, categories.name as category ${base} ${whereClause} LIMIT ? OFFSET ?`,
+      queryParams,
+      (e2, rows) => {
+        const products = (rows || []).map(r => ({
+          id: r.id,
+          name: r.name,
+          description: r.description,
+          category: r.category,
+          warranty: r.warranty_months,
+          support: r.support_type,
+          image: r.image ? '/uploads/' + r.image : null,
+          image_url: r.image ? '/uploads/' + r.image : null
+        }));
+        res.json({ products, total: countRow ? countRow.c : 0 });
+      }
+    );
+  });
+});
+
+app.get('/api/products/:id', (req, res) => {
+  db.get(
+    `SELECT id, name, description, category_id, warranty_months, support_type, image FROM products WHERE id=?`,
+    [req.params.id],
+    (err, row) => {
+      if (!row) return res.status(404).json({ message: 'Not found' });
+      res.json({
+        id: row.id,
+        name: row.name,
+        description: row.description,
+        category_id: row.category_id,
+        warranty_months: row.warranty_months,
+        support_type: row.support_type,
+        image_url: row.image ? '/uploads/' + row.image : null
+      });
+    }
+  );
+});
+
+app.put('/api/products/:id', authenticate, upload.single('image'), (req, res) => {
+  const { name, description, category_id, warranty_months, support_type } = req.body;
+  const img = req.file ? req.file.filename : null;
+  db.get('SELECT image FROM products WHERE id=?', [req.params.id], (err, row) => {
+    const imageToUse = img || (row ? row.image : null);
+    db.run(
+      `UPDATE products SET name=?, description=?, category_id=?, warranty_months=?, support_type=?, image=? WHERE id=?`,
+      [name, description, category_id, warranty_months, support_type, imageToUse, req.params.id],
+      function (err2) {
+        if (err2) return res.status(500).json({ message: 'DB error' });
+        db.run('INSERT INTO activities(type, message) VALUES(?, ?)', ['product_update', `Updated product ${name}`]);
+        res.json({ success: true });
+      }
+    );
+  });
+});
+
+app.delete('/api/products/:id', authenticate, (req, res) => {
+  db.run('DELETE FROM products WHERE id=?', [req.params.id], function (err) {
+    if (err) return res.status(500).json({ success: false });
+    db.run('INSERT INTO activities(type, message) VALUES(?, ?)', ['product_delete', `Deleted product ${req.params.id}`]);
+    res.json({ success: true });
+  });
+});
+
 app.get('/api/settings/site', authenticate, (req, res) => {
   db.all('SELECT key, value FROM settings', (err, rows) => {
     const settings = {};
