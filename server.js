@@ -5,13 +5,18 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
+const { createAuthMiddleware } = require('./middlewares/auth');
+const { setupSecurity, createLoginLimiter } = require('./middlewares/security');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET || 'warung_secret';
+const authenticate = createAuthMiddleware(SECRET);
+const loginLimiter = createLoginLimiter();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+setupSecurity(app);
 app.use('/admin', express.static(path.join(__dirname, 'admin')));
 app.use('/', express.static(__dirname));
 
@@ -68,19 +73,8 @@ db.serialize(() => {
   });
 });
 
-function authenticate(req, res, next) {
-  const header = req.headers['authorization'];
-  if (!header) return res.status(401).json({ message: 'Missing token' });
-  const token = header.split(' ')[1];
-  try {
-    req.user = jwt.verify(token, SECRET);
-    next();
-  } catch (_) {
-    res.status(401).json({ message: 'Invalid token' });
-  }
-}
 
-app.post('/api/admin/login', (req, res) => {
+app.post('/api/admin/login', loginLimiter, (req, res) => {
   const { email, password } = req.body;
   db.get('SELECT * FROM admins WHERE email = ?', [email], (err, row) => {
     if (!row) return res.json({ success: false, message: 'Invalid credentials' });
