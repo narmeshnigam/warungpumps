@@ -20,4 +20,13 @@
   if(toggle && nav){
     toggle.addEventListener('click',()=>nav.classList.toggle('open'));
   }
+
+  const dropToggle = document.querySelector('.dropdown-toggle');
+  const dropMenu = dropToggle ? dropToggle.nextElementSibling : null;
+  if(dropToggle && dropMenu){
+    dropToggle.addEventListener('click',e=>{
+      e.preventDefault();
+      dropMenu.style.display = dropMenu.style.display === 'block' ? 'none' : 'block';
+    });
+  }
 })();
