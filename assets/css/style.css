@@ -9,8 +9,8 @@
   --muted: #6b7280;
   --border: #e5e7eb;
   --white: #ffffff;
-  --footer-bg: #0a3d62;      /* deep brand blue */
-  --footer-darker: #072a44;  /* darker strip */
+  --footer-bg: #0a3d62;
+  --footer-darker: #072a44;
 }
 
 *,
@@ -85,7 +85,8 @@ h1, h2, h3, h4, h5, h6 {
 .highlight { background: var(--highlight); }
 .text-center { text-align: center; }
 
-/* HERO */
+/* HERO
+   FIX: use relative path from /assets/css/ to /assets/images/  */
 .hero {
   position: relative;
   background-size: cover;
@@ -95,8 +96,8 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   color: #fff;
   text-align: center;
-  height: 100vh;                                /* full height like your index inline */
-  background-image: url('/assets/images/hero-bg.png');
+  min-height: 90vh; /* FIX: prevents contracted look if header takes space */
+  background-image: url('../images/hero-bg.png'); /* FIXED PATH */
 }
 .hero::after {
   content: '';
@@ -105,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(to top, rgba(10, 61, 98, .7), rgba(10, 61, 98, .1));
   z-index: 1;
 }
-.hero-content { position: relative; z-index: 2; }
+.hero-content { position: relative; z-index: 2; padding: 24px; }
 
 /* HEADER / NAV */
 .site-header {
