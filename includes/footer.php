@@ -6,17 +6,17 @@
     <!-- Brand -->
     <div class="footer-col">
       <a href="/index.php" class="footer-logo">
-        <img src="/assets/images/warung-pumps-logo.png" alt="Warung Pumps Logo">
+        <img src="assets/images/warung-pumps-logo.png" alt="Warung Pumps Logo">
       </a>
       <p class="footer-tagline">
         Reliable water pumps for agriculture, residential, and industrial needs.
       </p>
 
       <div class="cert-logos" aria-label="Certifications">
-        <img src="/assets/logos/isi.png" alt="ISI Certified">
-        <img src="/assets/logos/iso.png" alt="ISO Certified">
-        <img src="/assets/logos/ce.png"  alt="CE Certified">
-        <img src="/assets/logos/bis.png" alt="BIS Certified">
+        <img src="assets/logos/isi.png" alt="ISI Certified">
+        <img src="assets/logos/iso.png" alt="ISO Certified">
+        <img src="assets/logos/ce.png"  alt="CE Certified">
+        <img src="assets/logos/bis.png" alt="BIS Certified">
       </div>
     </div>
 

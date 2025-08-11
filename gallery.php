@@ -52,7 +52,7 @@ function db_fetch_value(string $sql, array $params = []) {
 
 // --- Inputs / defaults ---
 $itemsPerPage  = 12;
-$placeholder   = '/assets/images/placeholder.jpg';
+$placeholder   = 'assets/images/placeholder.jpg';
 $catSlug       = isset($_GET['cat']) ? trim((string)$_GET['cat']) : '';
 $page          = max(1, (int)($_GET['page'] ?? 1));
 
@@ -198,7 +198,7 @@ $footerPath = $root.'/includes/footer.php';
 <div class="container">
   <h2>Highlighted Projects</h2>
   <div class="project">
-    <img src="/assets/gallery/project-etawah.jpg" alt="Etawah Submersible">
+    <img src="assets/gallery/project-etawah.jpg" alt="Etawah Submersible">
     <div class="project-content">
       <h3>Submersible Setup for 5 Acre Field – Etawah</h3>
       <p><strong>Pump Used:</strong> WRG-3HP-SUB</p>
@@ -207,7 +207,7 @@ $footerPath = $root.'/includes/footer.php';
     </div>
   </div>
   <div class="project">
-    <img src="/assets/gallery/project-kanpur.jpg" alt="Kanpur Tank">
+    <img src="assets/gallery/project-kanpur.jpg" alt="Kanpur Tank">
     <div class="project-content">
       <h3>Residential Booster Setup – Kanpur</h3>
       <p><strong>Pump Used:</strong> WRG-1HP-OPEN</p>

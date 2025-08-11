@@ -25,7 +25,7 @@ include __DIR__ . '/includes/header.php';
       </p>
     </div>
     <div>
-      <img src="/assets/images/brand-evolution.png" alt="Workshop to Showroom" style="width:100%; border-radius: 16px;" />
+      <img src="assets/images/brand-evolution.png" alt="Workshop to Showroom" style="width:100%; border-radius: 16px;" />
     </div>
   </div>
 </section>
@@ -34,12 +34,12 @@ include __DIR__ . '/includes/header.php';
 <section class="section highlight">
   <div class="container flex">
     <div class="card">
-      <img src="/assets/images/icon-mission.png" alt="Mission Icon" style="height: 48px; margin-bottom: 12px;">
+      <img src="assets/images/icon-mission.png" alt="Mission Icon" style="height: 48px; margin-bottom: 12px;">
       <h3>Our Mission</h3>
       <p>To deliver affordable, durable water pumping solutions that power agriculture, households, and industry reliably every day.</p>
     </div>
     <div class="card">
-      <img src="/assets/images/icon-vision.png" alt="Vision Icon" style="height: 48px; margin-bottom: 12px;">
+      <img src="assets/images/icon-vision.png" alt="Vision Icon" style="height: 48px; margin-bottom: 12px;">
       <h3>Our Vision</h3>
       <p>To be India’s most trusted pump brand — known for practical innovation, product reliability, and human-first service.</p>
     </div>
@@ -52,19 +52,19 @@ include __DIR__ . '/includes/header.php';
     <h2 class="text-center">Our Core Values</h2>
     <ul class="values">
       <li>
-        <img src="/assets/images/icon-durability.png" alt="Durability">
+        <img src="assets/images/icon-durability.png" alt="Durability">
         <div><strong>Durability:</strong> Built to withstand tough rural usage and extreme conditions</div>
       </li>
       <li>
-        <img src="/assets/images/icon-support.png" alt="Support">
+        <img src="assets/images/icon-support.png" alt="Support">
         <div><strong>Support:</strong> From selection to service, we’re available throughout</div>
       </li>
       <li>
-        <img src="/assets/images/icon-affordability.png" alt="Affordability">
+        <img src="assets/images/icon-affordability.png" alt="Affordability">
         <div><strong>Affordability:</strong> Practical pricing for every class of customer</div>
       </li>
       <li>
-        <img src="/assets/images/icon-integrity.png" alt="Integrity">
+        <img src="assets/images/icon-integrity.png" alt="Integrity">
         <div><strong>Integrity:</strong> Transparent, honest communication and long-standing vendor trust</div>
       </li>
     </ul>
@@ -88,9 +88,9 @@ include __DIR__ . '/includes/header.php';
   <div class="container flex">
     <div class="text-center">
       <h2>Certified Products</h2>
-      <img src="/assets/images/cert-bis.png" alt="BIS" style="height:40px; margin: 8px;">
-      <img src="/assets/images/cert-iso.png" alt="ISO" style="height:40px; margin: 8px;">
-      <img src="/assets/images/cert-ce.png" alt="CE" style="height:40px; margin: 8px;">
+      <img src="assets/images/cert-bis.png" alt="BIS" style="height:40px; margin: 8px;">
+      <img src="assets/images/cert-iso.png" alt="ISO" style="height:40px; margin: 8px;">
+      <img src="assets/images/cert-ce.png" alt="CE" style="height:40px; margin: 8px;">
     </div>
     <div>
       <h2>Growing Dealer Network</h2>
@@ -98,7 +98,7 @@ include __DIR__ . '/includes/header.php';
         We take pride in our ISI-compliant pumps and growing distribution network spanning cities and rural zones.
         Our partners trust us for quality and consistent margins.
       </p>
-      <img src="/assets/images/dealer-map.png" alt="Dealer Network Map" style="width:100%; border-radius: 16px;">
+      <img src="assets/images/dealer-map.png" alt="Dealer Network Map" style="width:100%; border-radius: 16px;">
     </div>
   </div>
 </section>

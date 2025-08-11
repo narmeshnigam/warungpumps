@@ -64,7 +64,7 @@ $page      = max(1, (int)($_GET['page'] ?? 1));
 $perPage   = 12;
 $offset    = ($page-1)*$perPage;
 
-$placeholderImg = '/assets/images/placeholder.jpg';
+$placeholderImg = 'assets/images/placeholder.jpg';
 
 // --- Filter options (pull distincts from DB, with graceful fallbacks) ---
 $types  = db_fetch_all("SELECT DISTINCT $COL_TYPE AS v FROM $TBL_PRODUCTS WHERE COALESCE($COL_ACTIVE,1)=1 AND $COL_TYPE IS NOT NULL AND $COL_TYPE<>'' ORDER BY v");

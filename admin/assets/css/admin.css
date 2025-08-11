@@ -1,0 +1,49 @@
+:root{
+  --bg:#F9F9F9;
+  --ink:#4A4A4A;
+  --blue:#0A3D62;
+  --orange:#F76C1C;
+  --hl:#E8F0FE;
+  --white:#fff;
+  --shadow:0 4px 16px rgba(10,61,98,.1);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;font-family:'Open Sans',system-ui,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);}
+
+a{color:var(--blue);text-decoration:none}
+a:hover{color:var(--orange)}
+
+.layout{display:grid;grid-template-columns:260px 1fr;grid-template-rows:auto 1fr auto;min-height:100vh}
+.sidebar{grid-row:1 / span 3;background:var(--white);box-shadow:var(--shadow);padding:20px}
+.sidebar .logo{font-family:'Poppins',sans-serif;font-weight:700;font-size:22px;color:var(--blue);margin-bottom:16px}
+.sidebar nav a{display:block;padding:10px 12px;border-radius:8px;margin:6px 0;font-weight:600}
+.sidebar nav a:hover{background:var(--hl)}
+
+.topbar{grid-column:2;background:var(--white);box-shadow:var(--shadow);padding:12px 20px;display:flex;align-items:center;justify-content:space-between}
+.topbar .title{font-family:'Poppins',sans-serif;font-weight:600;color:var(--blue)}
+.topbar .actions .hello{margin-right:12px;color:var(--ink)}
+
+.content{grid-column:2;padding:24px}
+.cards{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:16px}
+.card{background:var(--white);border-radius:14px;box-shadow:var(--shadow);padding:20px;transition:.3s}
+.card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(10,61,98,.15)}
+.card h3{margin:0 0 6px;font-weight:600}
+.card p{font-size:28px;margin:0;color:var(--blue);font-weight:700}
+
+.footer{grid-column:2;color:#777;text-align:center;padding:16px}
+
+.btn{background:var(--orange);color:var(--white);border:0;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;transition:.3s}
+.btn:hover{filter:brightness(110%);transform:scale(1.03)}
+.btn-small{padding:8px 12px;border-radius:8px}
+
+.alert{padding:10px 12px;border-radius:8px;margin-bottom:12px}
+.alert-error{background:#ffe4e4;color:#7a1a1a;border:1px solid #ffb3b3}
+
+.login-body{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-card{background:var(--white);box-shadow:var(--shadow);border-radius:16px;padding:28px;max-width:360px;width:100%}
+.login-card .brand{font-family:'Poppins',sans-serif;color:var(--blue);margin:0 0 12px}
+.login-card label{display:block;margin:10px 0 6px;font-weight:600}
+.login-card input{width:100%;padding:12px;border:1px solid var(--blue);border-radius:8px;background:#fff}
+.login-card .muted{color:#888;text-align:center;margin-top:12px;font-size:12px}

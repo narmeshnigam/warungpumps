@@ -40,7 +40,7 @@ function db_fetch_one(string $sql, array $params=[]): ?array {
 $id = max(1, (int)($_GET['id'] ?? 0));
 if (!$id) { http_response_code(404); $id = 0; }
 
-$placeholderImg = '/assets/images/placeholder.jpg';
+$placeholderImg = 'assets/images/placeholder.jpg';
 
 // --- Load main product (from products table used earlier) ---
 $prod = db_fetch_one("

@@ -34,7 +34,7 @@ function db_fetch_all(string $sql, array $params=[]): array {
   return [];
 }
 
-$placeholderImg = '/assets/images/placeholder.jpg';
+$placeholderImg = 'assets/images/placeholder.jpg';
 
 /**
  * INPUTS

@@ -10,14 +10,14 @@ if (session_status() !== PHP_SESSION_ACTIVE) session_start();
   <title><?php echo isset($page_title) ? htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') : 'Warung Pumps | Tubewell, Submersible & Openwell Pumps in India'; ?></title>
   <?php $meta = isset($page_description) ? $page_description : 'Warung Pumps offers reliable, high-performance water pumps for agriculture, residential, and commercial use. Explore our tubewell, submersible, and openwell pump range today.'; ?>
   <meta name="description" content="<?php echo htmlspecialchars($meta, ENT_QUOTES, 'UTF-8'); ?>">
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <!-- Site Header / Navigation -->
 <header class="site-header">
   <a href="/index.php" class="logo" style="display:flex;align-items:center;gap:10px;">
-    <img src="/assets/images/warung-pumps-logo.png" alt="Warung Pumps" style="height:40px;">
+    <img src="assets/images/warung-pumps-logo.png" alt="Warung Pumps" style="height:40px;">
   </a>
 
   <button id="menu-toggle" aria-label="Toggle menu" style="display:none;background:transparent;border:0;font-size:28px;line-height:1;cursor:pointer;">☰</button>

@@ -20,19 +20,19 @@ include __DIR__ . '/includes/header.php';
     <h2 class="text-center">Explore Our Pump Range</h2>
     <div class="grid3">
       <div class="card">
-        <img src="/assets/images/icon-tubewell.png" alt="Tubewell Icon" style="height: 64px; margin-bottom: 12px;">
+        <img src="assets/images/icon-tubewell.png" alt="Tubewell Icon" style="height: 64px; margin-bottom: 12px;">
         <h3>Tubewell Pumps</h3>
         <p>Long-lasting, deep suction systems</p>
         <a href="/products.php?type=Tubewell" class="btn" style="margin-top: 12px;">View Models →</a>
       </div>
       <div class="card">
-        <img src="/assets/images/icon-submersible.png" alt="Submersible Icon" style="height: 64px; margin-bottom: 12px;">
+        <img src="assets/images/icon-submersible.png" alt="Submersible Icon" style="height: 64px; margin-bottom: 12px;">
         <h3>Submersible Pumps</h3>
         <p>Efficient for deep borewells</p>
         <a href="/products.php?type=Submersible" class="btn" style="margin-top: 12px;">View Models →</a>
       </div>
       <div class="card">
-        <img src="/assets/images/icon-openwell.png" alt="Openwell Icon" style="height: 64px; margin-bottom: 12px;">
+        <img src="assets/images/icon-openwell.png" alt="Openwell Icon" style="height: 64px; margin-bottom: 12px;">
         <h3>Openwell Pumps</h3>
         <p>Ideal for shallow lifting</p>
         <a href="/products.php?type=Openwell" class="btn" style="margin-top: 12px;">View Models →</a>
@@ -46,10 +46,10 @@ include __DIR__ . '/includes/header.php';
   <div class="container">
     <h2 class="text-center">Why Choose Warung Pumps</h2>
     <div class="grid4 text-center">
-      <div><img src="/assets/images/durable.png" style="height:48px;"><p><strong>Field-Tested Durability</strong><br/>Designed to withstand tough rural conditions</p></div>
-      <div><img src="/assets/images/discharge.png" style="height:48px;"><p><strong>High Discharge Output</strong><br/>Maximum flow at minimum energy use</p></div>
-      <div><img src="/assets/images/affordable.png" style="height:48px;"><p><strong>Affordable & Efficient</strong><br/>Competitive pricing across all models</p></div>
-      <div><img src="/assets/images/trust.png" style="height:48px;"><p><strong>Pan-India Trust</strong><br/>Serving customers in 8+ states</p></div>
+      <div><img src="assets/images/durable.png" style="height:48px;"><p><strong>Field-Tested Durability</strong><br/>Designed to withstand tough rural conditions</p></div>
+      <div><img src="assets/images/discharge.png" style="height:48px;"><p><strong>High Discharge Output</strong><br/>Maximum flow at minimum energy use</p></div>
+      <div><img src="assets/images/affordable.png" style="height:48px;"><p><strong>Affordable & Efficient</strong><br/>Competitive pricing across all models</p></div>
+      <div><img src="assets/images/trust.png" style="height:48px;"><p><strong>Pan-India Trust</strong><br/>Serving customers in 8+ states</p></div>
     </div>
   </div>
 </section>
@@ -78,7 +78,7 @@ include __DIR__ . '/includes/header.php';
 <!-- Section 6: Dealer CTA -->
 <section class="section">
   <div class="container" style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px;">
-    <img src="/assets/images/dealer.png" alt="Dealership" style="flex: 1; max-width: 500px; border-radius: 16px;">
+    <img src="assets/images/dealer.png" alt="Dealership" style="flex: 1; max-width: 500px; border-radius: 16px;">
     <div style="flex: 1;">
       <h2>Join Our Dealer Network</h2>
       <p>If you sell pumps or serve customers in your region, partner with Warung Pumps for the best-performing inventory.</p>
