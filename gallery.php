@@ -116,62 +116,18 @@ function qp(array $add = [], array $remove = []): string {
 }
 
 // Try to include your header; if not present, keep fallback divs (matches original HTML)
+$page_title = 'Pump Installation Gallery & Projects | Warung Pumps';
+$page_description = 'Explore real-world installation photos, case studies, and project examples of Warung Pumps in action — from farmlands to industries.';
 $headerPath = $root.'/includes/header.php';
 $footerPath = $root.'/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Pump Installation Gallery & Projects | Warung Pumps</title>
-  <meta name="description" content="Explore real-world installation photos, case studies, and project examples of Warung Pumps in action — from farmlands to industries.">
-  <!-- keep your existing CSS link -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <!-- optional: your main bundle -->
-  <link rel="stylesheet" href="/assets/css/style.main.css">
-  <style>
-    /* Page-local safety (you can remove after copying into style.main.css) */
-    :root { --blue:#0A3D62; --orange:#F76C1C; --highlight:#E8F0FE; --text:#4A4A4A; --bg:#F9F9F9; }
-    * { box-sizing:border-box; margin:0; padding:0; }
-    body { font-family:'Open Sans',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
-    h1,h2,h3 { font-family:'Poppins',sans-serif; color:var(--blue); }
-    h1 { font-size:36px; margin-bottom:12px; }
-    h2 { font-size:28px; margin-bottom:12px; }
-    .container { max-width:1280px; margin:auto; padding:48px 24px; }
-    .btn { background:var(--orange); color:#fff; padding:10px 20px; border-radius:10px; font-family:'Montserrat',sans-serif; font-weight:600; text-decoration:none; display:inline-block; transition:0.3s ease; }
-    .btn:hover { filter:brightness(110%); transform:scale(1.05); }
-    .hero { background:url('/assets/images/gallery-banner.jpg') center/cover no-repeat; height:60vh; display:flex; align-items:center; justify-content:flex-start; padding-left:10%; position:relative; color:#fff; }
-    .hero::after { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.5); z-index:1; }
-    .hero-content { position:relative; z-index:2; max-width:600px; }
-    .filter-bar { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:24px; }
-    .filter-tag { background:#fff; padding:8px 16px; border-radius:20px; border:1px solid var(--blue); color:var(--blue); cursor:pointer; font-weight:600; text-decoration:none; }
-    .filter-tag.active, .filter-tag:hover { background:var(--highlight); }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:16px; margin-top:32px; }
-    .gallery-img { border-radius:14px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.08); transition:transform 0.3s ease; cursor:pointer; background:#fff; }
-    .gallery-img img { width:100%; display:block; height:auto; transition:transform 0.3s ease; }
-    .gallery-img:hover img { transform:scale(1.05); }
-    .project { display:flex; flex-wrap:wrap; gap:24px; margin-top:48px; background:#fff; border-radius:16px; box-shadow:0 4px 16px rgba(0,0,0,0.08); overflow:hidden; }
-    .project img { width:100%; max-width:480px; height:auto; object-fit:cover; }
-    .project-content { padding:24px; flex:1; }
-    .video-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:24px; margin-top:32px; }
-    iframe { width:100%; height:240px; border:none; border-radius:14px; }
-    .cta-banner { background:var(--highlight); padding:48px 24px; text-align:center; border-radius:14px; margin-top:64px; }
-    .sticky-whatsapp { position:fixed; bottom:16px; right:16px; background:#25D366; color:#fff; padding:12px 20px; border-radius:50px; font-weight:bold; text-decoration:none; box-shadow:0 4px 12px rgba(0,0,0,0.2); z-index:999; }
-    .pagination { display:flex; gap:8px; justify-content:center; margin:32px 0; flex-wrap:wrap; }
-    .page-btn { padding:8px 14px; border-radius:10px; border:1px solid var(--blue); color:var(--blue); text-decoration:none; font-weight:600; }
-    .page-btn.active, .page-btn:hover { background:var(--orange); color:#fff; border-color:var(--orange); }
-  </style>
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?>
   <!-- HEADER (fallback to your old loader structure) -->
   <div id="header"></div>
 <?php } ?>
 
 <!-- Hero Section -->
-<section class="hero">
+<section class="hero gallery-hero">
   <div class="hero-content">
     <h1>See Our Pumps in Action</h1>
     <p>Installations, projects, and proud partners across India.</p>
@@ -180,7 +136,7 @@ $footerPath = $root.'/includes/footer.php';
 
 <div class="container">
   <!-- Filter Tags -->
-  <div class="filter-bar">
+  <div class="gallery-filter">
     <?php
       $allActive = ($catSlug === '' || !$catId);
       echo '<a class="filter-tag'.($allActive?' active':'').'" href="'.htmlspecialchars(qp([], ['cat','page'])).'">All</a>';
@@ -277,15 +233,10 @@ $footerPath = $root.'/includes/footer.php';
   <a href="/contact.php" class="btn" style="margin-top:12px;">Contact Our Team →</a>
 </div>
 
+<!-- Sticky WhatsApp -->
+<a href="https://wa.me/918292397155?text=Hi%2C+I%27m+exploring+Warung+Pump+projects" class="sticky-whatsapp"><span class="emoji">💬</span> Ask Us How It Works</a>
+
 <?php if (file_exists($footerPath)) { include $footerPath; } else { ?>
   <!-- FOOTER (fallback) -->
   <div id="footer"></div>
 <?php } ?>
-
-<!-- Sticky WhatsApp -->
-<a href="https://wa.me/918292397155?text=Hi%2C+I%27m+exploring+Warung+Pump+projects" class="sticky-whatsapp"><span class="emoji">💬</span> Ask Us How It Works</a>
-
-<!-- keep your original asset loader if you still use header/footer via JS -->
-<script src="/load-assets.js"></script>
-</body>
-</html>
