@@ -126,8 +126,8 @@ if (!empty($prod['type'])) {
     FROM products
     WHERE COALESCE(is_active,1)=1 AND type = :type AND id <> :id
     ORDER BY COALESCE(popularity,0) DESC, created_at DESC
-    LIMIT 8
-  ", ['type'=>$prod['type'], 'id'=>$prod['id']]);
+    LIMIT :lim
+  ", ['type'=>$prod['type'], 'id'=>$prod['id'], 'lim'=>8]);
 }
 if (!$related && !empty($prod['usage_tag'])) {
   $related = db_fetch_all("
@@ -135,25 +135,15 @@ if (!$related && !empty($prod['usage_tag'])) {
     FROM products
     WHERE COALESCE(is_active,1)=1 AND usage_tag = :u AND id <> :id
     ORDER BY COALESCE(popularity,0) DESC, created_at DESC
-    LIMIT 8
-  ", ['u'=>$prod['usage_tag'], 'id'=>$prod['id']]);
+    LIMIT :lim
+  ", ['u'=>$prod['usage_tag'], 'id'=>$prod['id'], 'lim'=>8]);
 }
 
+$page_title = ($prod['name'] ?: 'Product').' – Specs, Features & Pricing | Warung Pumps';
+$page_description = $prod['short_description'] ?: 'See full technical specifications, features and use cases for this Warung Pumps model.';
 $headerPath = $root.'/includes/header.php';
 $footerPath = $root.'/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= htmlspecialchars(($prod['name'] ?: 'Product').' – Specs, Features & Pricing | Warung Pumps') ?></title>
-  <meta name="description" content="<?= htmlspecialchars(($prod['short_description'] ?: 'See full technical specifications, features and use cases for this Warung Pumps model.')) ?>">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/style.main.css">
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?><div id="header"></div><?php } ?>
 
 <!-- Overview -->
@@ -297,7 +287,3 @@ $footerPath = $root.'/includes/footer.php';
 <?php endif; ?>
 
 <?php if (file_exists($footerPath)) { include $footerPath; } else { ?><div id="footer"></div><?php } ?>
-
-<script src="/load-assets.js"></script>
-</body>
-</html>

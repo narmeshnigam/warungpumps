@@ -1,21 +1,11 @@
 <?php
 // privacy.php – Warung Pumps Privacy & Terms page
 $root = __DIR__;
+$page_title = 'Privacy Policy & Terms – Warung Pumps';
+$page_description = 'Read how Warung Pumps protects your privacy and governs the use of its website. Learn about data handling, third-party tools, terms of usage, and liability disclaimers.';
 $headerPath = $root.'/includes/header.php';
 $footerPath = $root.'/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy & Terms – Warung Pumps</title>
-  <meta name="description" content="Read how Warung Pumps protects your privacy and governs the use of its website. Learn about data handling, third-party tools, terms of usage, and liability disclaimers.">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/style.main.css">
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?>
   <div id="header"></div>
 <?php } ?>
@@ -50,12 +40,8 @@ $footerPath = $root.'/includes/footer.php';
   <p class="footer-note">Have questions about our policy? <a href="/contact.php" class="cta">Contact Us →</a></p>
 </div>
 
+<a href="https://wa.me/918292397155?text=Hi%2C+I+have+a+question+about+your+privacy+terms" class="sticky-whatsapp"><span class="emoji">💬</span> Privacy Help</a>
+
 <?php if (file_exists($footerPath)) { include $footerPath; } else { ?>
   <div id="footer"></div>
 <?php } ?>
-
-<a href="https://wa.me/918292397155?text=Hi%2C+I+have+a+question+about+your+privacy+terms" class="sticky-whatsapp"><span class="emoji">💬</span> Privacy Help</a>
-
-<script src="/load-assets.js"></script>
-</body>
-</html>

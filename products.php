@@ -136,21 +136,11 @@ function qp(array $add=[], array $remove=[]): string {
 }
 
 // Includes
+$page_title = 'Buy Submersible, Tubewell & Openwell Pumps | Warung Pumps';
+$page_description = 'Explore a full range of pumps at Warung — including submersible, tubewell, and openwell models. Filter by usage, HP, and specs. Trusted by farmers & professionals.';
 $headerPath = $root.'/includes/header.php';
 $footerPath = $root.'/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buy Submersible, Tubewell & Openwell Pumps | Warung Pumps</title>
-  <meta name="description" content="Explore a full range of pumps at Warung — including submersible, tubewell, and openwell models. Filter by usage, HP, and specs. Trusted by farmers & professionals.">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/style.main.css">
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?><div id="header"></div><?php } ?>
 
 <!-- Hero -->
@@ -216,8 +206,7 @@ $footerPath = $root.'/includes/footer.php';
     <?php else: foreach ($rows as $r):
       $img = $r['image_url'] ?: $placeholderImg;
       $hp  = hp_label($r['hp_min'], $r['hp_max']);
-      $slug = $r['slug'] ?: $r['id'];
-      $detailUrl = '/product-detail.php?slug='.urlencode((string)$slug);
+      $detailUrl = '/product-detail.php?id='.(int)$r['id'];
     ?>
       <article class="card product-card">
         <img src="<?= htmlspecialchars($img) ?>" alt="<?= htmlspecialchars($r['name'] ?: 'Warung Pump') ?>"
@@ -256,13 +245,9 @@ $footerPath = $root.'/includes/footer.php';
   </div>
 </div>
 
-<?php if (file_exists($footerPath)) { include $footerPath; } else { ?><div id="footer"></div><?php } ?>
-
 <!-- Sticky WhatsApp -->
 <a href="https://wa.me/918292397155?text=Hi%2C+I%27m+looking+for+a+pump+recommendation" target="_blank" class="sticky-whatsapp">
   <span class="emoji">💬</span> Need Help Choosing?
 </a>
 
-<script src="/load-assets.js"></script>
-</body>
-</html>
+<?php if (file_exists($footerPath)) { include $footerPath; } else { ?><div id="footer"></div><?php } ?>

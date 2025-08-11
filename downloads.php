@@ -39,7 +39,7 @@ include __DIR__ . '/includes/header.php';
 <section class="hero downloads-hero">
   <h1>Brochures, Manuals & More — In One Place</h1>
   <p>Quickly download the technical documents you need.</p>
-  <a href="selector-tool.html" class="btn" style="margin-top: 16px;">Get Help Choosing a Model →</a>
+  <a href="/selector-tool.php" class="btn" style="margin-top: 16px;">Get Help Choosing a Model →</a>
 </section>
 
 <!-- Section 2: Tabs -->

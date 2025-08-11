@@ -99,9 +99,9 @@ if ($hpMin !== null && $hpMax !== null) {
   $params['hpMin'] = $hpMin;
 }
 
-$sql .= " ORDER BY COALESCE(popularity,0) DESC, created_at DESC LIMIT 12";
+$sql .= " ORDER BY COALESCE(popularity,0) DESC, created_at DESC LIMIT :limit";
 
-$recommendations = ($usage || $source || $depth || $phase) ? db_fetch_all($sql, $params) : [];
+$recommendations = ($usage || $source || $depth || $phase) ? db_fetch_all($sql, array_merge($params,['limit'=>12])) : [];
 
 /** helpers */
 function hp_label($min,$max): string {
@@ -112,20 +112,11 @@ function hp_label($min,$max): string {
   return rtrim(rtrim((string)$v,'0'),'.').' HP';
 }
 
+$page_title = 'Pump Selector Tool – Find the Right Pump in Minutes | Warung Pumps';
+$page_description = 'Use the Warung Pump Selector Tool to get a personalized recommendation by depth, usage, and power.';
 $headerPath = $root.'/includes/header.php';
 $footerPath = $root.'/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pump Selector Tool – Find the Right Pump in Minutes | Warung Pumps</title>
-  <meta name="description" content="Use the Warung Pump Selector Tool to get a personalized recommendation by depth, usage, and power.">
-  <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?><div id="header"></div><?php } ?>
 
 <!-- Hero -->
@@ -243,8 +234,6 @@ $footerPath = $root.'/includes/footer.php';
   </div>
 </div>
 
-<?php if (file_exists($footerPath)) { include $footerPath; } else { ?><div id="footer"></div><?php } ?>
-
 <a href="https://wa.me/918292397155?text=Hi%2C+I%27d+like+help+with+pump+selection" class="sticky-whatsapp"><span class="emoji">💬</span> Talk to an Expert</a>
 
 <script>
@@ -275,6 +264,5 @@ $footerPath = $root.'/includes/footer.php';
   if (depth && depthVal) depth.addEventListener('input', () => depthVal.textContent = depth.value);
   showStep(location.hash || '#step1');
 </script>
-<script src="/load-assets.js"></script>
-</body>
-</html>
+
+<?php if (file_exists($footerPath)) { include $footerPath; } else { ?><div id="footer"></div><?php } ?>

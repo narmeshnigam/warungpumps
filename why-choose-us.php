@@ -1,21 +1,11 @@
 <?php
 // why-choose-us.php – Warung Pumps
 $root = __DIR__;
+$page_title = 'Why Warung Pumps | Trusted Water Pump Brand in India';
+$page_description = 'Discover why Warung Pumps is trusted across farms, homes, and industry. See our quality, support, and performance commitments.';
 $headerPath = $root . '/includes/header.php';
 $footerPath = $root . '/includes/footer.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Why Warung Pumps | Trusted Water Pump Brand in India</title>
-  <meta name="description" content="Discover why Warung Pumps is trusted across farms, homes, and industry. See our quality, support, and performance commitments.">
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/style.main.css">
-</head>
-<body>
-
 <?php if (file_exists($headerPath)) { include $headerPath; } else { ?>
   <div id="header"></div>
 <?php } ?>
@@ -67,12 +57,8 @@ $footerPath = $root . '/includes/footer.php';
   <a href="/products.php" class="btn">Browse Pump Models →</a>
 </div>
 
+<a href="https://wa.me/918292397155?text=Hi%2C+I%27d+like+to+know+why+Warung+is+trusted" class="sticky-whatsapp"><span class="emoji">💬</span> Ask Us Why We’re Trusted</a>
+
 <?php if (file_exists($footerPath)) { include $footerPath; } else { ?>
   <div id="footer"></div>
 <?php } ?>
-
-<a href="https://wa.me/918292397155?text=Hi%2C+I%27d+like+to+know+why+Warung+is+trusted" class="sticky-whatsapp"><span class="emoji">💬</span> Ask Us Why We’re Trusted</a>
-
-<script src="/load-assets.js"></script>
-</body>
-</html>

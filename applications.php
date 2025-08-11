@@ -59,7 +59,7 @@ include __DIR__ . '/includes/header.php';
   <h2>Field Success Stories</h2>
   <div class="card-grid">
     <div class="card">
-      <img src="assets/images/case-farm.jpg" alt="Farm Setup">
+      <img src="/assets/images/case-farm.jpg" alt="Farm Setup">
       <div class="card-content">
         <h3>5-Acre Farm Borewell – Badaun, UP</h3>
         <p><strong>Pump:</strong> WRG-3HP-SUB + Control Panel<br><strong>Result:</strong> 2-acre field coverage in 1 hour</p>
@@ -67,7 +67,7 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
     <div class="card">
-      <img src="assets/images/case-house.jpg" alt="House Setup">
+      <img src="/assets/images/case-house.jpg" alt="House Setup">
       <div class="card-content">
         <h3>Overhead Tank Boost – Kanpur</h3>
         <p><strong>Pump:</strong> WRG-1HP-OPEN<br><strong>Result:</strong> Full house tank in 12 minutes</p>
@@ -75,7 +75,7 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
     <div class="card">
-      <img src="assets/images/case-construction.jpg" alt="Construction Setup">
+      <img src="/assets/images/case-construction.jpg" alt="Construction Setup">
       <div class="card-content">
         <h3>Construction Dust Control – Lucknow</h3>
         <p><strong>Pump:</strong> WRG-2HP-TUBE<br><strong>Result:</strong> Continuous water spray for 6 hours/day</p>
@@ -88,7 +88,7 @@ include __DIR__ . '/includes/header.php';
 <!-- Section 4: Application Match CTA -->
 <div class="container cta-strip">
   <h2>Still Wondering What Pump Matches Your Use?</h2>
-  <a href="selector-tool.html" class="btn" style="margin-top: 16px;">Try Pump Selector →</a>
+  <a href="/selector-tool.php" class="btn" style="margin-top: 16px;">Try Pump Selector →</a>
 </div>
 
 <!-- Sticky WhatsApp -->
