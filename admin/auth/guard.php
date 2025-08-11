@@ -6,7 +6,7 @@ require_once __DIR__ . '/../lib/helpers.php';
 start_session();
 
 if (empty($_SESSION['admin'])) {
-  redirect(BASE_URL . '/login.php');
+  redirect('/login.php');
 
 }
 

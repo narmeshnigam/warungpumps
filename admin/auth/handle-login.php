@@ -6,7 +6,7 @@ require_once __DIR__ . '/../lib/db.php';
 require_once __DIR__ . '/../lib/helpers.php';
 require_once __DIR__ . '/csrf.php';
 
-if (!method_is('POST')) { redirect(BASE_URL . '/login.php');
+if (!method_is('POST')) { redirect('/login.php');
  }
 csrf_verify();
 
@@ -15,7 +15,7 @@ $pass  = (string)($_POST['password'] ?? '');
 
 if ($email === '' || $pass === '') {
   flash('error', 'Email and password required.');
-  redirect(BASE_URL . '/login.php');
+  redirect('/login.php');
 
 }
 
@@ -25,7 +25,7 @@ $user = $stmt->fetch();
 
 if (!$user || !(bool)$user['is_active'] || !password_verify($pass, $user['password_hash'])) {
   flash('error', 'Invalid credentials.');
-  redirect(BASE_URL . '/login.php');
+  redirect('/login.php');
 
 }
 
@@ -38,4 +38,4 @@ $_SESSION['admin'] = [
   'login_at' => date('c'),
 ];
 
-redirect(BASE_URL . '/index.php');
+redirect('/index.php');
