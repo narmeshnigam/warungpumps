@@ -952,3 +952,32 @@ input, select, textarea {
 @media (max-width: 768px) {
   .wp-pd-overview h1 { font-size: 28px; }
 }
+
+/* === Selector Tool (selector-tool.php) === */
+.selector-hero { background: var(--highlight-bg,#E8F0FE); text-align: center; padding: 64px 24px; }
+.center { text-align: center; }
+.mt-16 { margin-top: 16px; }
+.mt-12 { margin-top: 12px; }
+
+.progress { text-align: center; margin: 16px 0 24px; font-weight: 600; color: var(--accent-blue,#0A3D62); }
+
+.form-step { display: none; background: #fff; padding: 32px; border-radius: 14px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); margin-bottom: 24px; }
+.form-step.active { display: block; }
+.form-step h3 { font-size: 20px; margin-bottom: 16px; color: var(--accent-blue,#0A3D62); }
+.form-step label { display: block; margin-bottom: 12px; font-weight: 600; }
+.form-step input[type=range] { width: 100%; }
+.depth-readout { margin-top: 8px; color: var(--text-muted,#4A4A4A); }
+
+.step-buttons { display: flex; justify-content: space-between; margin-top: 24px; }
+
+.result-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 24px; }
+.recommendation { background: var(--highlight-bg,#E8F0FE); padding: 32px 24px; border-radius: 14px; text-align: center; }
+
+.support-box { background: var(--highlight-bg,#E8F0FE); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding: 32px; border-radius: 14px; margin-top: 48px; }
+
+.sticky-whatsapp { position: fixed; bottom: 16px; right: 16px; background: #25D366; color: #fff; padding: 12px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 999; }
+
+.card h4 { margin-bottom: 8px; color: var(--accent-blue,#0A3D62); }
+
+/* Buttons: reuse global .btn; add brand-alt state for enquire buttons */
+.btn.alt { background: var(--accent-blue,#0A3D62); }
